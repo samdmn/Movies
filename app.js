@@ -49,13 +49,11 @@ function setupEventListeners() {
         if (e.target.classList.contains('page-link')) {
             currentPage = parseInt(e.target.dataset.page);
             renderMovies();
-            scrollToTop();
         }
         if (e.target.classList.contains('prev-btn')) {
             if (currentPage > 1) {
                 currentPage--;
                 renderMovies();
-                scrollToTop();
             }
         }
         if (e.target.classList.contains('next-btn')) {
@@ -63,14 +61,9 @@ function setupEventListeners() {
             if (currentPage < totalPages) {
                 currentPage++;
                 renderMovies();
-                scrollToTop();
             }
         }
     });
-}
-
-function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function generateFilters() {
